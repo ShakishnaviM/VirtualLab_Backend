@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoute.js';
 import authRoutes from './routes/authRoute.js';
+import cors from 'cors'
 
 dotenv.config();
 
@@ -17,7 +18,9 @@ mongoose
     console.log(err);
   });
 
+
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
