@@ -34,6 +34,7 @@ export const updateUser = async(req, res, next) =>{
 
 
     }catch{
+        next(error);
          
     }
 }

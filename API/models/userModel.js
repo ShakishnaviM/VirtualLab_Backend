@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     },
     profilePicture:{
         type:String,
-        default: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fuser-profile&psig=AOvVaw21qsX-EbCcGICXV1HsslhI&ust=1713585197698000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCICEiruwzYUDFQAAAAAdAAAAABAE.avif'
+        default: 'https://static-00.iconduck.com/assets.00/profile-default-icon-1024x1023-4u5mrj2v.png'
     },
 
 },
