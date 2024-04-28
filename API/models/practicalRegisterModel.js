@@ -4,17 +4,14 @@ const practicalRegisterSchema = new mongoose.Schema({
     userID:{
         type:String,
         require:true,
-        unique:true,
     },
     practicalID:{
         type:String,
         require:true,
-        unique:true,
     },
     practicalSubject:{
         type:String,
         require:true,
-        unique:true,
     },
     completed:{
         type:Boolean,
