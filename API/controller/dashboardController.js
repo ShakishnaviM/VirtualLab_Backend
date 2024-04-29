@@ -10,7 +10,7 @@ export const progress = async (req, res, next) => {
             // Find the latest in-progress practical
             const latestInProgressPractical = await practicalRegister.findOne({ userID, completed: false }, null, { sort: { updatedAt: -1 } });
     
-            // Count completed and in-progress practicals for each subject
+            // Count completed and in-progress practicals for each Module
             const totalPracticals = 10;
             const practicalCounts = {
                 Physics: { completed: 0, inProgress: 0 },
