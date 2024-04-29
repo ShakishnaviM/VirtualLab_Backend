@@ -4,7 +4,7 @@ export const progress = async (req, res, next) => {
 
     const fetchPracticalStatistics = async (userID) => {
         try {
-            // Fetch all practical data for the user.
+            // Fetch all practical data for the user
             const practicalData = await practicalRegister.find({ userID });
     
             // Find the latest in-progress practical
