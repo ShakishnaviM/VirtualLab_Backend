@@ -49,7 +49,7 @@ const deleteItemList = async (req, res) => {
         const { id } = req.params;
         const deletelistItem = await physicsList.findByIdAndDelete(id);
         if (!deletelistItem) {
-            return res.status(404).json({ message: "Item not found" });
+            return res.status(404).json({ message: "Items not found" });
         }
         res.status(200).json({ message: "Item deleted successfully" });
     } catch (error) {
