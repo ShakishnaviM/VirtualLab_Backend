@@ -5,6 +5,10 @@ import userRoutes from './routes/userRoute.js';
 import authRoutes from './routes/authRoute.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import subjectRoutes from'./API_for_Practicals/routes/subject.Routes.js'
+import bioListRoutes from './API_for_Practicals/routes/BioList.Routes.js';
+import chemistryListRoutes from './API_for_Practicals/routes/Chem.Routes.js'
+import PhysicsRoutes from './API_for_Practicals/routes/Physics.Routes.js'
 
 dotenv.config();
 
@@ -35,6 +39,14 @@ app.listen(PORT, () => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+
+//subjectAPI
+app.use("/api/subject",subjectRoutes)
+app.use("/api/subjects/bioList",bioListRoutes)
+app.use("/api/subjects/chemistryList",chemistryListRoutes)
+app.use("/api/subjects/physics",PhysicsRoutes)
+
+
 
 app.use((err, req, res, next) => {
   const statusCode = err. statusCode || 500;
