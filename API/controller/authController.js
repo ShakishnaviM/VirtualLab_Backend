@@ -16,7 +16,7 @@ export const signUp = async (req, res, next) => {
         // Hash the password
         const hashedPassword = bcryptjs.hashSync(password, 15);
 
-        // Create a new user with the hashed password
+        // Create a new user with the hashed passwor
         const newUser = new User({ username, email, password: hashedPassword, Stream });
 
         // Save the new user
@@ -48,6 +48,42 @@ export const signIn = async(req, res, next) =>{
             .cookie('access_token', token, {httpOnly:true, expires: expiryDate})
             .status(200)
             .json(rest);
+    }catch(error){
+        next(error);
+    }
+}
+
+export const google = async(req, res, next)=>{
+    try{
+        const User = await User.findOne(req.body.email);
+
+        if(User){
+        const token = jwt.sign({id : User._id }, process.env.JWT_SECRET);
+        const {password: hashedPassword, ...rest} = User._doc;
+        const expiryDate = new Date(Date.now()+3600000); //1hour
+        res
+        .cookie('access_token', token, {httpOnly:true, expires: expiryDate})
+        .status(200)
+        .json(rest);
+            }else{
+            const generatedPassword = Math.random().toString(36).slice(-8) +Math.random().toString(36).slice(-8);
+            const hashedPassword = bcryptjs.hashSync(generatedPassword, 15);
+            const newUser = new User({
+                username: req.body.name.split("").join("").toLowerCase()+ Math.floor(Math.random * 10000).toString(),
+                email: req.body.email,
+                password:hashedPassword,
+                profilePicture: req.body.photo
+            });
+            await newUser.save();
+            const token = jwt.sign({id: newUser._id}, process.env.JWT_SECRET);
+            const{ password:hashedPassword2, ...rest} = newUser._doc;
+            res
+            .cookie('access_token', token, {httpOnly:true, expires: expiryDate})
+            .status(200)
+            .json(rest);
+        }   
+
+
     }catch(error){
         next(error);
     }
