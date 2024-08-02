@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoute.js';
 import authRoutes from './routes/authRoute.js';
+import dashboardRoutes from './routes/dashboardRoute.js';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import subjectRoutes from'./API_for_Practicals/routes/subject.Routes.js'
@@ -39,6 +40,7 @@ app.listen(PORT, () => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 //subjectAPI
 app.use("/api/subject",subjectRoutes)
