@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 
 const bioListSchema = mongoose.Schema(
     {
-        name: String
+        name: {type: String}, 
+        image:{type: String ,require:false}   
     },
     {
         timestamp: true
