@@ -23,3 +23,4 @@ const practicalRegisterSchema = new mongoose.Schema({
 const practicalRegister = mongoose.model('practicalRegister', practicalRegisterSchema);
 
 export default practicalRegister
+

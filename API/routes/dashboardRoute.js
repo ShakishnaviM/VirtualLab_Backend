@@ -3,7 +3,7 @@ import { progress} from '../controller/dashboardController.js';
 
 const router = express.Router();
 
-router.post("/progress", progress);
+router.get("/progress", progress);
 
 export default router;
 //dashboard router
