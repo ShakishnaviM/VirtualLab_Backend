@@ -10,6 +10,7 @@ import subjectRoutes from'./API_for_Practicals/routes/subject.Routes.js'
 import bioListRoutes from './API_for_Practicals/routes/BioList.Routes.js';
 import chemistryListRoutes from './API_for_Practicals/routes/Chem.Routes.js'
 import PhysicsRoutes from './API_for_Practicals/routes/Physics.Routes.js'
+import QDashRoute from './routes/QDashRoute.js'
 
 dotenv.config();
 
@@ -41,6 +42,7 @@ app.listen(PORT, () => {
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/quizDashboard", QDashRoute);
 
 //subjectAPI
 app.use("/api/subject",subjectRoutes)
