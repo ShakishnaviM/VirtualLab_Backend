@@ -2,6 +2,7 @@ import practicalRegister from "../models/practicalRegisterModel.js";
 
 export const progress = async (req, res, next) => {
 
+
     const fetchPracticalStatistics = async (userID) => {
         try {
             // Fetch all practical data for the user.
@@ -18,6 +19,7 @@ export const progress = async (req, res, next) => {
                 Biology: { completed: 0, inProgress: 0 }
             };
     
+
             practicalData.forEach(item => {
                 if (item.completed) {
                     practicalCounts[item.practicalSubject].completed++;
@@ -25,6 +27,7 @@ export const progress = async (req, res, next) => {
                     practicalCounts[item.practicalSubject].inProgress++;
                 }
             });
+
     
             // Calculate completed and in-progress percentages for each subject
             const percentages = {};
@@ -38,6 +41,7 @@ export const progress = async (req, res, next) => {
                 percentages,
                 latestInProgressPractical
             };
+
         } catch (error) {
             console.error('Error fetching practical status statistics:', error);
             throw error; // Propagate error for handling at higher level
@@ -51,3 +55,4 @@ export const progress = async (req, res, next) => {
     
     
 };
+

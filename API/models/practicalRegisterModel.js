@@ -17,15 +17,18 @@ const practicalRegisterSchema = new mongoose.Schema({
         type:Boolean,
         require:true,
     },
+
     correct_answers:{
         type:String
     },
     wrong_answers:{
         type:String
     }
+
 },
 {timestamps:true});
 
 const practicalRegister = mongoose.model('practicalRegister', practicalRegisterSchema);
+
 
 export default practicalRegister
