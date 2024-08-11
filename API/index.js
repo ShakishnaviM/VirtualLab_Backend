@@ -10,7 +10,11 @@ import subjectRoutes from'./API_for_Practicals/routes/subject.Routes.js'
 import bioListRoutes from './API_for_Practicals/routes/BioList.Routes.js';
 import chemistryListRoutes from './API_for_Practicals/routes/Chem.Routes.js'
 import PhysicsRoutes from './API_for_Practicals/routes/Physics.Routes.js'
-import QDashRoute from './routes/QDashRoute.js'
+import BiologyPracticalRoutes from './API_for_Practicals/routes/bioPracticals.route.js'
+import PhysicsPracticalRoutes from './API_for_Practicals/routes/PhysicsPracticals.Routes.js'
+import ChemistryPracticals from './API_for_Practicals/routes/ChemistryPracticals.Routes.js'
+
+
 
 dotenv.config();
 
@@ -46,9 +50,12 @@ app.use("/api/quizDashboard", QDashRoute);
 
 //subjectAPI
 app.use("/api/subject",subjectRoutes)
-app.use("/api/subjects/bioList",bioListRoutes)
+app.use("/api/subjects/biologyList",bioListRoutes)
 app.use("/api/subjects/chemistryList",chemistryListRoutes)
-app.use("/api/subjects/physics",PhysicsRoutes)
+app.use("/api/subjects/physicsList",PhysicsRoutes)
+app.use("/api/subjects/practicals",BiologyPracticalRoutes)
+app.use("/api/subjects/practicals",PhysicsPracticalRoutes)
+app.use("/api/subjects/practicals",ChemistryPracticals)
 
 
 
