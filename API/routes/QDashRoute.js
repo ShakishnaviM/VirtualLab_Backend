@@ -4,6 +4,6 @@ import { getQData } from '../controller/QDashController.js';
 
 const router = express.Router();
 
-router.get('/', getQData);
+router.post('/', getQData);
 
 export default router;
