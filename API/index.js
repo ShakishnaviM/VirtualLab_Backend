@@ -14,6 +14,7 @@ import BiologyPracticalRoutes from './API_for_Practicals/routes/bioPracticals.ro
 import PhysicsPracticalRoutes from './API_for_Practicals/routes/PhysicsPracticals.Routes.js';
 import ChemistryPracticals from './API_for_Practicals/routes/ChemistryPracticals.Routes.js';
 import QDashRoute from './routes/QDashRoute.js';  // Add this line
+import quizRoutes from './API_for_Practicals/routes/quizRoutes.js';
 
 dotenv.config();
 
@@ -41,6 +42,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/quizDashboard", QDashRoute);  // No more error here
+app.use("/api/quiz", quizRoutes);
 
 // subjectAPI
 app.use("/api/subject", subjectRoutes);
