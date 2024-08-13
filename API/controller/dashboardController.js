@@ -20,13 +20,18 @@ export const progress = async (req, res, next) => {
             };
     
 
-            practicalData.forEach(item => {
-                if (item.completed) {
-                    practicalCounts[item.practicalSubject].completed++;
+            practicalData.forEach(item => {  
+                if (practicalCounts[item.practicalSubject]) {
+                    if (item.completed) {
+                        practicalCounts[item.practicalSubject].completed++;
+                    } else {
+                        practicalCounts[item.practicalSubject].inProgress++;
+                    }
                 } else {
-                    practicalCounts[item.practicalSubject].inProgress++;
+                    console.warn(`Unknown practicalSubject: ${item.practicalSubject}`);
+                    // Handle unknown subjects if necessary, e.g., add a new key or skip
                 }
-            });
+            });
 
     
             // Calculate completed and in-progress percentages for each subject
