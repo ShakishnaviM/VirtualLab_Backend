@@ -10,7 +10,7 @@ export const getQData = async (req, res, next) => {
             const subjects = {};
         
             practicalData.forEach(item => {
-                const percentage = (item.score / 10) * 100; // Assuming score is out of 10
+                const percentage = (item.no_of_correct_answers / 5) * 100; // Assuming score is out of 10
         
                 if (!subjects[item.practicalSubject]) {
                     subjects[item.practicalSubject] = {
@@ -22,7 +22,7 @@ export const getQData = async (req, res, next) => {
         
                 subjects[item.practicalSubject].practicals.push({
                     name: `Practical Name ${item.practicalID}`, // or any other naming convention
-                    score: item.score,
+                    score: item.no_of_correct_answers,
                     rank: item.rank,
                     percentage: percentage
                 });
