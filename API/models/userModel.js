@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         default: 'https://static-00.iconduck.com/assets.00/profile-default-icon-1024x1023-4u5mrj2v.png' 
     },
+    admin:{
+        type:Boolean,
+        default:false,
+    }
 
 },
 {timestamps:true});
