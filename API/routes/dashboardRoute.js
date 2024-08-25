@@ -1,9 +1,9 @@
 import express from 'express';
-import { progress} from '../controller/dashboardController.js';
+import { progress } from '../controller/dashboardController.js';
 
 const router = express.Router();
 
-router.post("/progress", progress);
+// Use userID as a route parameter
+router.get("/progress/:userID", progress);
 
 export default router;
-//dashboard router
