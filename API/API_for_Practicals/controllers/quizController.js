@@ -1,7 +1,6 @@
 import practicalRegister from "../../models/practicalRegisterModel.js";
 
 export const saveQuizData = async (req,res) => {
-    console.log(req.body);
     try {
         const practicalData = new practicalRegister(req.body);
         const savedPractical = await practicalData.save();

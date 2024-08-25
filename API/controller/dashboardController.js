@@ -42,7 +42,8 @@ export const progress = async (req, res, next) => {
         }
     };
     
-    const statistics = await fetchPracticalStatistics(req.params.userID);
-    console.log(req.params.userID);
+
+    // Assuming req.body.userID contains the user ID
+    const statistics = await fetchPracticalStatistics(req.body.userID);
     res.send(statistics);
 };
