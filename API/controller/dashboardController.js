@@ -55,7 +55,6 @@ export const progress = async (req, res, next) => {
     
     // Assuming req.body.userID contains the user ID
     const statistics = await fetchPracticalStatistics(req.body.userID);
-    console.log(req.body.userID);
     res.send(statistics);
     
     
