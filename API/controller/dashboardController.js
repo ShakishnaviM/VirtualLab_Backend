@@ -1,7 +1,7 @@
 import practicalRegister from "../models/practicalRegisterModel.js";
 
 export const progress = async (req, res, next) => {
-
+    const { userID } = req.params;
     const fetchPracticalStatistics = async (userID) => {
         try {
             const practicalData = await practicalRegister.find({ userID });
