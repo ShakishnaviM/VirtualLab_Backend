@@ -49,9 +49,9 @@ app.use("/api/subject", subjectRoutes);
 app.use("/api/subjects/biologyList", bioListRoutes);
 app.use("/api/subjects/chemistryList", chemistryListRoutes);
 app.use("/api/subjects/physicsList", PhysicsRoutes);
-app.use("/api/subjects/practicals", BiologyPracticalRoutes);
-app.use("/api/subjects/practicals", PhysicsPracticalRoutes);
-app.use("/api/subjects/practicals", ChemistryPracticals);
+app.use("/api/subjects/practicals/biology", BiologyPracticalRoutes);
+app.use("/api/subjects/practicals/physics", PhysicsPracticalRoutes);
+app.use("/api/subjects/practicals/chemistry", ChemistryPracticals);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
