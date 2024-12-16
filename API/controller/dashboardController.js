@@ -2,7 +2,9 @@ import practicalRegister from "../models/practicalRegisterModel.js";
 
 export const progress = async (req, res, next) => {
     const { userID } = req.params;
-    const fetchPracticalStatistics = async (userID) => {
+    console.log(userID, "udani");
+    
+    const fetchPracticalStatistics = async () => {
         try {
             const practicalData = await practicalRegister.find({ userID });
             const latestInProgressPractical = await practicalRegister.findOne({ userID, completed: false }, null, { sort: { updatedAt: -1 } });
